@@ -4,25 +4,25 @@ self.addEventListener('install', function(event) {
       caches.open(contentOfCaches).then(function(cache) {
         return cache.addAll(
           [
-          'css/styles.css',
-          'data/restaurants.json',
-          'img/1.jpg',
-          'img/2.jpg',
-          'img/10.jpg',
-          'img/3.jpg',
-          'img/4.jpg',
-          'img/5.jpg',
-          'img/6.jpg',
-          'img/7.jpg',
-          'img/8.jpg',
-          'img/9.jpg',
-          'js/dbhelper.js',
-          'js/main.js',
-          'js/restaurant_info.js',
-          'index.html',
-          'register.js',
-          'restaurant.html',
-          'sw.js'
+          './css/styles.css',
+          './data/restaurants.json',
+          './img/1.jpg',
+          './img/2.jpg',
+          './img/10.jpg',
+          './img/3.jpg',
+          './img/4.jpg',
+          './img/5.jpg',
+          './img/6.jpg',
+          './img/7.jpg',
+          './img/8.jpg',
+          './img/9.jpg',
+          './js/dbhelper.js',
+          './js/main.js',
+          './js/restaurant_info.js',
+          './index.html',
+          './register.js',
+          './restaurant.html',
+          './sw.js'
           ]
         ).catch((error) => {console.log('something went wrong %0' + error)});
       })
