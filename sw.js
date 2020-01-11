@@ -43,28 +43,27 @@ self.addEventListener('install', function(event) {
     )
   })
 
-  //self.addEventListener('fetch', function(event) {
-    //event.respondWith(
-      //caches.match(event.request).then(function(response) {
-        //return response;
-      //})
-    //);
-  //});
+  self.addEventListener('fetch', function(event) {
+    event.respondWith(
+      caches.match(event.request).then(function(response) {
+        return response;
+      })
+    );
+  });
 
-  self.addEventListener('fetch',e=>{
-    console.log("fetch is working");
-    {
-      event.respondWith(
-        fetch(event.request)
-        .then(response=>{
-          const responseClone = response.clone();
-          caches.open('contentOfCaches')
-          .then(cache => {
-            cache.put(event.request,responseClone);
-          })
+  //self.addEventListener('fetch',e=>{
+    //console.log("fetch is working");
+    //{
+      //event.respondWith(
+        //fetch(event.request)
+        //.then(response=>{
+          //caches.open('contentOfCaches')
+          //.then(cache => {
+            //cache.put(event.request,responseClone);
+          //})
           return response;
-        })
-       .catch(error => caches.match(event.request).then(response => response))
-      )
-    }
-  })
+        //})
+       //.catch(error => caches.match(event.request).then(response => response))
+      //)
+    //}
+  //})
